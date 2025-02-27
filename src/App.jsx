@@ -3,24 +3,26 @@ import AppRoutes from './routes';
 import {ThemeProvider} from 'styled-components';
 import theme from './theme/theme';
 import { useState } from 'react';
-import GlobalStyle from './styles/GlobalStyle';
+import {GlobalStyle} from './styles/GlobalStyle';
 import Header from './components/Header';
+import './App.css';
+import Footer from './components/Footer';
+
 function App() {
 
   const [themeSelect, setThemeSelect] = useState("dark");
 
-  console.log(theme[themeSelect]);
-
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+    setThemeSelect((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
 
   return (
     <Router>
       <ThemeProvider theme={theme[themeSelect]}>
         <GlobalStyle />
-        <Header />
-        <AppRoutes />
+        <Header toggleTheme={toggleTheme} theme={themeSelect} />
+          <AppRoutes />
+        <Footer />
       </ThemeProvider>
     </Router>
   );

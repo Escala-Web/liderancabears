@@ -1,13 +1,37 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
+
     body {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
-        background-color: ${({theme}) => theme.background};
+        font-family: 'Poppins', sans-serif;
+        background-color: ${({ theme }) => theme.background};
+        overflow-x: hidden;
     }
 `;
 
-export default GlobalStyle;
+export const Container = styled.div`
+  min-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .textHighlight {
+    color: ${({ theme }) => theme.primaryText};
+  }
+
+  .title {
+    font-size: ${({ theme }) => theme.title};
+    color: ${({theme}) => theme.secondaryText};
+    text-transform: uppercase;
+  }
+
+  .paragraph {
+    font-size: ${({ theme }) => theme.paragraphSize};
+    color: ${({ theme }) => theme.paragraphColor};
+  }
+`;

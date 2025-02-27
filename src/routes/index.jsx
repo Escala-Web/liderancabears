@@ -1,8 +1,8 @@
 import React from "react";
 
 import {Routes, Route} from 'react-router-dom';
-import Home from "../view/Home";
-import NotFound from "../view/NotFound";
+import Home from "../view/Home/Home";
+import NotFound from "../view/NotFound/NotFound";
 
 
 const AppRoutes = () =>{
