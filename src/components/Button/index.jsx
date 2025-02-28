@@ -1,10 +1,10 @@
 import React from "react";
 import ButtonStyle from "./style";
 
-const Button = ({ text, isActive = true }) => {
+const Button = ({ text, isActive = 1 }) => {
   return (
     <div>
-      <ButtonStyle isActive={isActive}>{text}</ButtonStyle>
+      <ButtonStyle isactive={isActive}>{text}</ButtonStyle>
     </div>
   );
 };

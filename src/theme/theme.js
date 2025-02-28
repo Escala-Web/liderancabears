@@ -10,6 +10,7 @@ const theme = {
         primaryText: '#BE9661',
         secondaryText: '#E1E1E1',
         paragraphColor: '#787878',
+        colorGray: "#787878",
         borderGray: "#444443",
         
         //sizes

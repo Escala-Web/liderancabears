@@ -6,7 +6,7 @@ const ContainerBanner = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url('/banner_teste.png');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url('/images/banner_teste.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HeaderContainer } from "./style";
-import { MdDarkMode, MdOutlineLightbulb } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 import Box from "@mui/material/Box";
@@ -11,11 +10,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import { Container } from "../../styles/GlobalStyle";
 
 const Header = ({ anchor = "right" }) => {
   const [headerActive, setHeaderActive] = React.useState(false);
@@ -102,7 +97,7 @@ const Header = ({ anchor = "right" }) => {
     <HeaderContainer active={headerActive ? 1 : undefined}>
       <div className="containerHeader">
         <Link to="/" className="logo">
-          <img src="/logo-site.png" alt="Logo" />
+          <img src="/images/logo-site.png" alt="Logo" />
         </Link>
 
         <div className="menu">
