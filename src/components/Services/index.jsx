@@ -4,29 +4,32 @@ import { IoLocationSharp } from "react-icons/io5";
 import { MdOutlineSmartphone } from "react-icons/md";
 import { CONFIG } from "../../config/config";
 import CardService from "../CardService";
-import { Container } from "../../styles/GlobalStyle";
+import tesourasIcon from "../../assets/icons/tesouras.png";
+import navalhaIcon from "../../assets/icons/navalha.png";
+import cabeloCurtoIcon from "../../assets/icons/cabelo-masculino-curto.png";
+import mascaraIcon from "../../assets/icons/mascara-de-folha.png";
 
 const Services = () => {
   const servicos = [
     {
       titulo: "Corte de Cabelo premium",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: "/icons/tesouras.svg",
+      icone: tesourasIcon,
     },
     {
       titulo: "Barba e finalizações",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: "/icons/navalha.svg",
+      icone: navalhaIcon,
     },
     {
       titulo: "Tratamentos capilares",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: "/icons/cabelo-masculino-curto.svg",
+      icone: cabeloCurtoIcon,
     },
     {
       titulo: "Cuidados com a pele",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: "/icons/mascara-de-folha.svg",
+      icone: mascaraIcon,
     },
   ];
 

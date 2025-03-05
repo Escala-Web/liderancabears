@@ -4,6 +4,8 @@ import Services from "../../components/Services";
 import About from "../../components/About";
 import ContainerHome from "./style";
 import Works from "../../components/Works";
+import Prices from "../../components/Prices";
+import Contact from "../../components/Contact";
 
 const Home = () => {
   return (
@@ -12,7 +14,9 @@ const Home = () => {
       <ContainerHome>
         <Services />
         <Works />
-        <About />
+        <Prices/>
+        <Contact />
+        {/* <About /> */}
       </ContainerHome>
     </>
   );

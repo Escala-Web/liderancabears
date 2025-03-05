@@ -11,9 +11,16 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import Logo from '../../assets/images/logo-site.png';
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ anchor = "right" }) => {
   const [headerActive, setHeaderActive] = React.useState(false);
+  
+  const navigateHome = () =>{
+    const navigate = useNavigate();
+    navigate("/");
+  }
 
   const [state, setState] = useState({
     top: false,
@@ -97,13 +104,13 @@ const Header = ({ anchor = "right" }) => {
     <HeaderContainer active={headerActive ? 1 : undefined}>
       <div className="containerHeader">
         <Link to="/" className="logo">
-          <img src="/images/logo-site.png" alt="Logo" />
+          <img src={Logo} alt="Logo" />
         </Link>
 
         <div className="menu">
           <nav>
             <ul>
-              <li>Home</li>
+              <li onClick={()=> navigateHome()}>Home</li>
               <li>Sobre</li>
               <li>Serviços</li>
               <li>Contato</li>

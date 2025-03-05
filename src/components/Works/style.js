@@ -5,6 +5,7 @@ const WorkContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 5rem 0;
 
     .textHighlight {
         color: ${({ theme }) => theme.primaryText};
@@ -36,9 +37,10 @@ const WorkContainer = styled.section`
         color: ${({ theme }) => theme.paragraphColor};
     }
 
-    .container{
+    .containerWork{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
         min-width: 1400px;
     }

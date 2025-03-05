@@ -7,6 +7,7 @@ import {GlobalStyle} from './styles/GlobalStyle';
 import Header from './components/Header';
 import './App.css';
 import Footer from './components/Footer';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <ThemeProvider theme={theme[themeSelect]}>
         <GlobalStyle />
+        <ToastContainer />
         <Header toggleTheme={toggleTheme} theme={themeSelect} />
           <AppRoutes />
         <Footer />

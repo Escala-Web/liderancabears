@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import banner from "../../assets/images/banner_teste.png"
 
 const ContainerBanner = styled.div`
 	width: 100%;
@@ -6,7 +7,7 @@ const ContainerBanner = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url('/images/banner_teste.png');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url(${banner});
 	background-repeat: no-repeat;
 	background-size: cover;
 

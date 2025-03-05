@@ -11,6 +11,7 @@ const ButtonStyle = styled.button.attrs((props) => ({
   color: ${({ theme }) => theme.secondaryText};
   font-weight: bold;
   font-size: 1.3rem;
+  cursor: pointer;
 `;
 
 export default ButtonStyle;

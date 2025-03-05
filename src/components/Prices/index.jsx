@@ -1,0 +1,91 @@
+import React from "react";
+import PricesContent from "./style";
+import ListPrice from "../ListPrice";
+import Button from "../Button";
+import Reviews from "../Reviews";
+import ReviewsSlider from "../ReviewsSlider";
+import Lideranca from '../../assets/images/lideranca.png'
+
+const Prices = () => {
+  const prices = [
+    { service: "Barba Simples", price: "R$45,00" },
+    { service: "Barboterapia", price: "R$55,00" },
+    { service: "Bigode", price: "R$10,00" },
+    { service: "Botox Capilar", price: "R$65,00" },
+    { service: "Coloração", price: "R$55,00" },
+    { service: "Corte", price: "R$55,00" },
+    { service: "Corte + Bigode + Sombrancelha", price: "R$65,00" },
+    { service: "Corte + Sombrancelha", price: "R$60,00" },
+    { service: "Corte e Barba", price: "R$85,00" },
+    { service: "Corte e Barba + Sombrancelha", price: "R$90,00" },
+    { service: "Corte Infantil", price: "R$49,00" },
+    { service: "Depilação da Orelha (Cera Quente)", price: "R$20,00" },
+    { service: "Depilação no Nariz (Cera Quente)", price: "R$20,00" },
+    { service: "Hidratação Capilar", price: "R$35,00" },
+    { service: "Luzes", price: "R$85,00" },
+    { service: "Máscara Black", price: "R$20,00" },
+    { service: "Penteado", price: "R$20,00" },
+    { service: "Pezinho (Somente Navalha)", price: "R$15,00" },
+    { service: "Pigmentação", price: "R$10,00" },
+    { service: "Platinado", price: "R$120,00" },
+    { service: "Progressiva", price: "R$90,00" },
+    { service: "Raspar a cabeça", price: "R$30,00" },
+    { service: "Selagem Capilar", price: "R$80,00" },
+    { service: "Sombrancelha", price: "R$10,00" },
+  ];
+
+  const reviews = [
+    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
+    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
+    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
+    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"}
+  ]
+
+  const [showAll, setShowAll] = React.useState(false);
+
+  return (
+    <PricesContent>
+      <div className="price">
+        <h2 className="title">
+          <span className="textHighlight">Nossos</span> Preços
+        </h2>
+        <p className="paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos,
+          et praesentium ullam officiis unde atque, minima commodi dolore quo
+          voluptatibus incidunt illum itaque aut magni libero possimus, odit
+          deleniti!
+        </p>
+
+        {prices.slice(0, showAll ? prices.length : 5).map((element, index) => (
+          <ListPrice
+            service={element.service}
+            price={element.price}
+            key={index}
+          />
+        ))}
+
+        <div className="seeAll">
+          <Button
+            text={showAll ? "Ver menos" : "Ver todos"}
+            onClick={() => setShowAll(!showAll)}
+          />
+        </div>
+      </div>
+
+      <div className="reviews">
+        <div>
+          <img src={Lideranca} alt="" />
+        </div>
+        <div>
+          <h2>Avaliações de nossos clientes</h2>
+
+          <div className="content">
+            <ReviewsSlider reviews={reviews}/>
+          </div>
+        </div>
+      </div>
+    </PricesContent>
+  );
+};
+
+export default Prices;
