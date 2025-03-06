@@ -1,19 +1,28 @@
 import React from "react";
 
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../view/Home/Home";
 import NotFound from "../view/NotFound/NotFound";
 import Policy from "../view/Policy";
 
+const AppRoutes = () => {
+  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
+  const location = useLocation();
 
-const AppRoutes = () =>{
+  React.useEffect(() => {
+    if (location.pathname !== currentPath) {
+      setCurrentPath(location.pathname);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location, currentPath]);
 
-    return (
-        <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/politica-de-privacidade" element={<Policy/>} />
-        </Routes>
-    );
-}
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/politica-de-privacidade" element={<Policy />} />
+      <Route path="*" element = {<Home/>}/>
+    </Routes>
+  );
+};
 
 export default AppRoutes;

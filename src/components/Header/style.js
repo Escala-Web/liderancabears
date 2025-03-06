@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
     padding: 1rem;
     background-color: ${({ active,theme }) => (active ? "#0c0c0c" : "transparent")};
     color: #fff;
-    position: ${({ active }) => (active ? "fixed" : "absolute")};
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;

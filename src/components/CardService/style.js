@@ -29,6 +29,10 @@ const ContainerCard = styled.div`
         text-transform: uppercase;
         color: ${({theme}) => theme.secondaryText};
     }
+
+    @media (max-width: 1400px){
+        width: 80%;
+    }
     
 `;
 

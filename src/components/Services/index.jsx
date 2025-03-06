@@ -12,26 +12,26 @@ import mascaraIcon from "../../assets/icons/mascara-de-folha.png";
 const Services = () => {
   const servicos = [
     {
-      titulo: "Corte de Cabelo premium",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: tesourasIcon,
+        titulo: "Corte de Cabelo Premium",
+        desc: "Transforme seu visual com cortes personalizados e técnicas modernas. Nossos barbeiros especialistas garantem um acabamento impecável, realçando seu estilo único.",
+        icone: tesourasIcon,
     },
     {
-      titulo: "Barba e finalizações",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: navalhaIcon,
+        titulo: "Barba e Finalizações",
+        desc: "Experimente o cuidado completo para sua barba, desde o design até o acabamento perfeito. Oferecemos técnicas tradicionais e modernas para um visual impecável e confortável.",
+        icone: navalhaIcon,
     },
     {
-      titulo: "Tratamentos capilares",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: cabeloCurtoIcon,
+        titulo: "Tratamentos Capilares",
+        desc: "Cuide da saúde do seu cabelo com nossos tratamentos exclusivos. Oferecemos soluções para diversos tipos de cabelo, promovendo força, brilho e vitalidade.",
+        icone: cabeloCurtoIcon,
     },
     {
-      titulo: "Cuidados com a pele",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusantium id, dignissimos exercitationem dolorem placeat rem ipsum minima reiciendis est earum tempore deleniti! Iste, corporis delectus architecto officiis hic maxime!",
-      icone: mascaraIcon,
+        titulo: "Cuidados com a Pele",
+        desc: "Relaxe e revitalize sua pele com nossos tratamentos faciais. Oferecemos limpeza profunda, hidratação e cuidados específicos para um rosto com aparência rejuvenescida.",
+        icone: mascaraIcon,
     },
-  ];
+];
 
   return (
     <ServicesContainer>
@@ -40,12 +40,11 @@ const Services = () => {
           Serviços <span className="textHighlight">Além da Expectativa</span>
         </h2>
         <p className="paragraph">
-          Na nossa barbearia, não é apenas sobre cortes de cabelo, mas sim sobre
-          criar experiências. Um espaço para quem busca serviços impecáveis em
-          um ambiente relaxante e acolhedor. Na nossa barbearia, não é apenas
-          sobre cortes de cabelo, mas sim sobre criar experiências. Um espaço
-          para quem busca serviços impecáveis em um ambiente relaxante e
-          acolhedor.
+          Cada serviço é pensado para atender às suas necessidades e estilo.
+          Nossos barbeiros dominam técnicas avançadas e utilizam produtos de
+          alta qualidade, para que você saia da nossa barbearia com a confiança
+          renovada. Na Liderança Barbers Shop, cada
+          detalhe é pensado para proporcionar uma experiência única e memorável.
         </p>
       </div>
 
@@ -56,7 +55,7 @@ const Services = () => {
               <span>
                 <IoLocationSharp />
               </span>
-              <h3>Location</h3>
+              <h3>Localização</h3>
             </div>
             <p className="descriptionLocal">{CONFIG.address}</p>
           </div>
@@ -67,7 +66,7 @@ const Services = () => {
                 <MdOutlineSmartphone />
               </span>
               <h3>
-                <a href={CONFIG.getLinkWpp()} target="_blank">
+                <a href={CONFIG.getLinkWpp()} target="_blank" title="Ir para WhatsApp">
                   {CONFIG.whatsapp}
                 </a>
               </h3>
@@ -83,23 +82,22 @@ const Services = () => {
             width="600"
             height="450"
             style={{ border: 0 }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
 
       <div className="contentServices">
-          {servicos.map((element, index) => (
-            
-            <CardService
-              key={index}
-              desc={element.desc}
-              titulo={element.titulo}
-              icone={element.icone}
-            />
-          ))}
+        {servicos.map((element, index) => (
+          <CardService
+            key={index}
+            desc={element.desc}
+            titulo={element.titulo}
+            icone={element.icone}
+          />
+        ))}
       </div>
     </ServicesContainer>
   );

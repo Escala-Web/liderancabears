@@ -45,6 +45,9 @@ const WorkContainer = styled.section`
         min-width: 1400px;
     }
 
+    @media (max-width: 1440px){
+        margin-top: 2rem;
+    }
 `;
 
 export default WorkContainer;

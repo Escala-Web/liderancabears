@@ -172,6 +172,35 @@ const ServicesContainer = styled.section`
     background: #d4af37;
     color: #111;
   }
+
+  @media(max-width: 1440px) {
+    margin-bottom: 0;
+
+    .aboutService, .local{
+      padding: 5rem 10rem;
+    }
+
+    .contentServices{
+      margin-top: 5rem;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      padding: 0 16rem;
+      box-sizing: border-box;
+      gap: 1rem;
+
+      .cardService{
+        width: 80%;
+        height: 80%;
+        h3{
+          text-align: center;
+        }
+      }
+    }
+  }
 `;
 
 export default ServicesContainer;

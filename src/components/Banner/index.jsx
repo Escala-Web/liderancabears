@@ -1,8 +1,15 @@
 import ContainerBanner from "./style";
 import Button from "../Button";
 import { Container } from "../../styles/GlobalStyle";
+import {CONFIG} from '../../config/config';
 
 const Banner = () => {
+
+  function redirectWhatsapp(){
+    const LINK = CONFIG.getLinkWpp();
+    window.open(LINK, '_blank');
+  }
+
   return (
     <ContainerBanner>
       <Container>
@@ -12,7 +19,7 @@ const Banner = () => {
           <p className="since">Desde 2024</p>
         </div>
 
-        <Button text={"Faça seu Agendamento"}></Button>
+        <Button text={"Faça seu Agendamento"} onClick={()=> redirectWhatsapp()}></Button>
       </Container>
     </ContainerBanner>
   );

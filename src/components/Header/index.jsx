@@ -11,16 +11,22 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Logo from '../../assets/images/logo-site.png';
+import Logo from "../../assets/images/logo-site.png";
 import { useNavigate } from "react-router-dom";
+import {CONFIG} from '../../config/config';
 
 const Header = ({ anchor = "right" }) => {
+  function redirectWhatsapp() {
+    const LINK = CONFIG.getLinkWpp();
+    window.open(LINK, "_blank");
+  }
+
   const [headerActive, setHeaderActive] = React.useState(false);
-  
-  const navigateHome = () =>{
+
+  const navigateHome = () => {
     const navigate = useNavigate();
     navigate("/");
-  }
+  };
 
   const [state, setState] = useState({
     top: false,
@@ -49,9 +55,9 @@ const Header = ({ anchor = "right" }) => {
       <List>
         {[
           { text: "Home", link: "/" },
-          { text: "About", link: "/about" },
-          { text: "Services", link: "/services" },
-          { text: "Contact", link: "/contact" },
+          { text: "Sobre", link: "/about" },
+          { text: "Serviços", link: "/services" },
+          { text: "Contato", link: "/contact" },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component={Link} to={item.link}>
@@ -103,19 +109,19 @@ const Header = ({ anchor = "right" }) => {
   return (
     <HeaderContainer active={headerActive ? 1 : undefined}>
       <div className="containerHeader">
-        <Link to="/" className="logo">
-          <img src={Logo} alt="Logo" />
+        <Link to="/" className="logo" title="Ir para Home">
+          <img src={Logo} alt="Logo" title="Logo" />
         </Link>
 
         <div className="menu">
           <nav>
             <ul>
-              <li onClick={()=> navigateHome()}>Home</li>
+              <li onClick={() => navigateHome()}>Home</li>
               <li>Sobre</li>
               <li>Serviços</li>
               <li>Contato</li>
             </ul>
-            <button className="agendar">Agendamento</button>
+            <button className="agendar" onClick={()=> redirectWhatsapp()}>Agendamento</button>
           </nav>
         </div>
       </div>

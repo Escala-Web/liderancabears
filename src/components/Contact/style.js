@@ -72,6 +72,12 @@ const ContactContainer = styled.section`
         background-image: url(${banner});
         background-size: cover;
     }
+
+    @media (max-width: 1440px){
+        .form{
+            padding-left: 10rem;
+        }
+    }
 `;
 
 export default ContactContainer;

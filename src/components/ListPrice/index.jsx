@@ -1,9 +1,9 @@
 import React from 'react';
 import ListPriceContainer from './style';
 
-const ListPrice = ({price, service, key}) => {
+const ListPrice = ({price, service}) => {
     return (
-        <ListPriceContainer key={key} className='listServices'>
+        <ListPriceContainer className='listServices'>
             <div className='serviceList'>{service}</div>
             <div className='priceList'>{price}</div>
         </ListPriceContainer>

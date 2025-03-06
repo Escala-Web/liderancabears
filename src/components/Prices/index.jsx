@@ -4,7 +4,7 @@ import ListPrice from "../ListPrice";
 import Button from "../Button";
 import Reviews from "../Reviews";
 import ReviewsSlider from "../ReviewsSlider";
-import Lideranca from '../../assets/images/lideranca.png'
+import Lideranca from "../../assets/images/lideranca.png";
 
 const Prices = () => {
   const prices = [
@@ -35,11 +35,23 @@ const Prices = () => {
   ];
 
   const reviews = [
-    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
-    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
-    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"},
-    {text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos, et praesentium ullam officiis unde atque, minima commodi dolore qu voluptatibus incidunt illum itaque aut magni libero possimus, odit deleniti!", author: "Autor Author"}
-  ]
+    {
+      text: "Sempre tive dificuldade em encontrar um barbeiro que entendesse meu estilo, mas na Liderança Barbers Shop encontrei o lugar perfeito. O atendimento é de primeira e os produtos que eles usam são de alta qualidade.",
+      author: "Rafael Santos",
+    },
+    {
+      text: "Levei meu filho para cortar o cabelo e ele adorou! Os barbeiros foram muito simpáticos e pacientes com ele. O corte ficou lindo e ele saiu de lá todo feliz.",
+      author: "Fernanda Costa",
+    },
+    {
+      text: "Fiz um tratamento capilar e meu cabelo ficou muito mais forte e brilhante. Os produtos que eles usam são realmente muito bons e o atendimento é impecável. Recomendo!",
+      author: "Ricardo Souza",
+    },
+    {
+      text: "Sempre fui muito exigente com meu visual, mas na Liderança Barbers Shop encontrei tudo o que preciso. Os barbeiros são muito profissionais e o ambiente é agradavel. Recomendo a todos os homens que se preocupam com a aparência.",
+      author: "Gabriel Pereira",
+    },
+  ];
 
   const [showAll, setShowAll] = React.useState(false);
 
@@ -50,10 +62,10 @@ const Prices = () => {
           <span className="textHighlight">Nossos</span> Preços
         </h2>
         <p className="paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum quos,
-          et praesentium ullam officiis unde atque, minima commodi dolore quo
-          voluptatibus incidunt illum itaque aut magni libero possimus, odit
-          deleniti!
+          Qualidade premium e preços justos. Na Liderança Barbers Shop, você
+          encontra serviços de alto padrão com valores que cabem no seu bolso.
+          Invista em você e desfrute de uma experiência única de cuidado e
+          estilo.
         </p>
 
         {prices.slice(0, showAll ? prices.length : 5).map((element, index) => (
@@ -74,13 +86,13 @@ const Prices = () => {
 
       <div className="reviews">
         <div>
-          <img src={Lideranca} alt="" />
+          <img src={Lideranca} alt="Imagem da Barbearia" title="Imagem da Barbearia" width={"100%"}/>
         </div>
-        <div>
+        <div className="coment">
           <h2>Avaliações de nossos clientes</h2>
 
           <div className="content">
-            <ReviewsSlider reviews={reviews}/>
+            <ReviewsSlider reviews={reviews} />
           </div>
         </div>
       </div>

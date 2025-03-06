@@ -17,7 +17,7 @@ const FooterContent = styled.footer`
         grid-template-columns: 1fr 1fr 1fr;
         justify-content: center;
         align-items: center;
-
+        padding: 0 6rem;
     }
 
     .footer-content{
@@ -44,6 +44,13 @@ const FooterContent = styled.footer`
         align-items: center;
         gap: 1rem;
         
+    }
+
+    h3{
+        a{
+            color: ${({theme}) => theme.secondaryText};
+            text-decoration: none;
+        }
     }
 
     .whatsapp{
@@ -73,6 +80,8 @@ const FooterContent = styled.footer`
             transform: scale(1);
         }
     }
+
+    
 `;
 
 export default FooterContent;
