@@ -53,7 +53,7 @@ const Works = () => {
         {clients
           .slice(0, visibleClients ? clients.length : 5)
           .map((element, index) => (
-            <div key={index}>
+            <div key={index} className="containerImage">
               <img src={element} alt="Imagem de um dos trabalhos da Liderança Barber" title="Imagem de um dos trabalhos da Liderança Barber"/>
             </div>
           ))}

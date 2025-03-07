@@ -28,6 +28,19 @@ const Header = ({ anchor = "right" }) => {
     navigate("/");
   };
 
+  const navigateTo = (navigate) => {
+    const element = document.querySelector(navigate);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 50,
+        behavior: "smooth",
+      });
+    } else {
+      const navigateFunc = useNavigate();
+      navigateFunc(navigate);
+    }
+  }
+
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -55,13 +68,13 @@ const Header = ({ anchor = "right" }) => {
       <List>
         {[
           { text: "Home", link: "/" },
-          { text: "Sobre", link: "/about" },
-          { text: "Serviços", link: "/services" },
-          { text: "Contato", link: "/contact" },
+          { text: "Sobre", link: "#about" },
+          { text: "Serviços", link: "#works" },
+          { text: "Contato", link: "#contact" },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton component={Link} to={item.link}>
-              <ListItemText primary={item.text} />
+            <ListItemButton component="a" href={item.link}>
+              <ListItemText primary={item.text} style={{textTransform: 'uppercase', fontWeight: "bold", color: "white"}}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -75,7 +88,7 @@ const Header = ({ anchor = "right" }) => {
             component={Link}
             to="/agendamento"
             sx={{
-              bgcolor: "primary.main",
+              bgcolor: "#BE9661",
               color: "white",
               "&:hover": { bgcolor: "primary.dark" },
               borderRadius: 1,
@@ -117,16 +130,16 @@ const Header = ({ anchor = "right" }) => {
           <nav>
             <ul>
               <li onClick={() => navigateHome()}>Home</li>
-              <li>Sobre</li>
-              <li>Serviços</li>
-              <li>Contato</li>
+              <li onClick={()=> navigateTo("#about")}>Sobre</li>
+              <li onClick={()=> navigateTo("#works")}>Serviços</li>
+              <li onClick={()=> navigateTo("#contact")}>Contato</li>
             </ul>
             <button className="agendar" onClick={()=> redirectWhatsapp()}>Agendamento</button>
           </nav>
         </div>
       </div>
 
-      <Button className="toggleMenu" onClick={toggleDrawer(anchor, true)}>
+      <Button className="toggleMenu" onClick={toggleDrawer(anchor, true)} style={{color: "white"}}>
         <IoMenu size={24} />
       </Button>
 
@@ -134,6 +147,11 @@ const Header = ({ anchor = "right" }) => {
         anchor={anchor}
         open={state[anchor]}
         onClose={toggleDrawer(anchor, false)}
+        PaperProps={{
+          sx: {
+            background: '#0c0c0c'
+          }
+        }}
       >
         <Button onClick={toggleDrawer(anchor, false)}>
           <IoClose size={24} />

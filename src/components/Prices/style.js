@@ -4,6 +4,8 @@ const PricesContent = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  
+
   .textHighlight {
     color: ${({ theme }) => theme.primaryText};
   }
@@ -15,6 +17,9 @@ const PricesContent = styled.section`
     position: relative;
     width: 100%;
     text-align: center;
+    @media (max-width: 425px){
+      font-size: 2.2rem;
+    }
   }
 
   .title::after {
@@ -57,7 +62,7 @@ const PricesContent = styled.section`
     }
 
     .price {
-      padding-left: 10rem;
+      padding: 5rem 6rem;
     }
   }
 
@@ -70,6 +75,39 @@ const PricesContent = styled.section`
 
     .content {
       margin-top: 5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    .reviews {
+      .coment {
+        margin: 4rem 0;
+        transform: none;
+      }
+    }
+  }
+
+  @media (max-width: 425px){
+    .price{
+      padding: 4rem 2rem;
+    }
+
+    .reviews {
+      .coment{
+        padding: 0 2rem;
+      }
+      .content {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  @media (max-width: 375px){
+    .reviews {
+      .coment{
+        padding: 0 1rem;
+      }
     }
   }
 `;

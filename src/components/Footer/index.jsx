@@ -11,6 +11,33 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
 
+  const handleScroll = () => {
+    const bannerHeight = document.querySelector('.banner')?.offsetHeight || 0;
+    const footerHeight = document.querySelector('.footer-content')?.offsetHeight || 0;
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const footerPosition = document.body.scrollHeight - footerHeight;
+  
+    const whatsappButton = document.querySelector('.whatsapp');
+    if (!whatsappButton) return;
+  
+    if (window.scrollY > bannerHeight && scrollPosition < footerPosition) {
+      whatsappButton.style.opacity = '1';
+      whatsappButton.style.visibility = 'visible';
+    } else {
+      whatsappButton.style.opacity = '0';
+      whatsappButton.style.visibility = 'hidden';
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <FooterContent>
       <div className="containerFooter">

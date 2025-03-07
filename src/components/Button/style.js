@@ -12,6 +12,10 @@ const ButtonStyle = styled.button.attrs((props) => ({
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
+
+  @media (max-width: 1024px){
+    font-size: 1rem;
+  }
 `;
 
 export default ButtonStyle;

@@ -6,7 +6,7 @@ const FooterContent = styled.footer`
     background-color: aliceblue;
     background-color: #0c0c0c;
     color: white;
-    color: ${({theme}) => theme.paragraphColor};
+    color: ${({ theme }) => theme.paragraphColor};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,16 +28,16 @@ const FooterContent = styled.footer`
     }
 
     a{
-        color: ${({theme}) => theme.paragraphColor};
+        color: ${({ theme }) => theme.paragraphColor};
     }
 
     .iconFooter{
-        color: ${({theme}) => theme.primaryText};
+        color: ${({ theme }) => theme.primaryText};
         font-size: 2rem;
     }
 
     .footerContact, .footerAddress, .footerEmail{
-        color: ${({theme}) => theme.secondaryText};
+        color: ${({ theme }) => theme.secondaryText};
         text-transform: uppercase;
         display: flex;
         justify-content: center;
@@ -48,7 +48,7 @@ const FooterContent = styled.footer`
 
     h3{
         a{
-            color: ${({theme}) => theme.secondaryText};
+            color: ${({ theme }) => theme.secondaryText};
             text-decoration: none;
         }
     }
@@ -67,6 +67,16 @@ const FooterContent = styled.footer`
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+        @media (max-width: 425px) {
+            bottom: 1.5rem;
+            right: 1.5rem;
+            height: 55px;
+            width: 55px;
+        }
     }
 
     @keyframes pulse {
@@ -81,6 +91,54 @@ const FooterContent = styled.footer`
         }
     }
 
+    @media (max-width: 1024px){
+        .containerFooter{
+            display: flex;
+            flex-direction: column;
+
+            .footerEmail {
+                order: 1;
+            }
+
+            .footerAddress {
+                order: 2;
+            }
+
+            .footerContact {
+                order: 3;
+            }
+        }
+    }
+
+    @media (max-width: 768px){
+        .footer-content{
+            flex-direction: column;
+            padding: 1rem;
+            gap: 0;
+            margin: 0;
+        }
+
+        .containerFooter{
+            padding: 0 16px;
+            gap: 1rem;
+
+            .footerContact, .footerAddress, .footerEmail{
+                flex-direction: column;
+                gap: 0;
+
+                h3{
+                    margin: 0;
+                    text-align: center;
+                }
+            }
+        }
+
+        h3{
+            a{
+                font-size: 0.8rem;
+            }
+        }
+    }
     
 `;
 

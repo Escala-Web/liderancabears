@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
+    :root{
+      scroll-behavior: smooth;
+    }
+
     body {
         margin: 0;
         padding: 0;
@@ -34,4 +38,19 @@ export const Container = styled.div`
     font-size: ${({ theme }) => theme.paragraphSize};
     color: ${({ theme }) => theme.paragraphColor};
   }
+
+  @media (max-width: 768px){
+    min-width: 0;
+    .title{
+      font-size: 2.2rem !important;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1024px){
+    .title{
+      font-size: 3rem;
+    }
+  }
+
 `;

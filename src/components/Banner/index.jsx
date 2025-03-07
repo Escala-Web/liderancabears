@@ -1,12 +1,11 @@
 import ContainerBanner from "./style";
 import Button from "../Button";
 import { Container } from "../../styles/GlobalStyle";
-import {CONFIG} from '../../config/config';
 
 const Banner = () => {
 
   function redirectWhatsapp(){
-    const LINK = CONFIG.getLinkWpp();
+    const LINK = "https://sites.appbarber.com.br/liderancabarber-71lw?fbclid=PAZXh0bgNhZW0CMTEAAaakUgmf3Y5iz5kgIC_kkMpnCvZ7GbdDrjQPiGNIfW1HqpYowfPGSoKkr54_aem_NTLP-ZDTnNZffJMkgLVj_Q";
     window.open(LINK, '_blank');
   }
 

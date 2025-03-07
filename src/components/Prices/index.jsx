@@ -2,7 +2,6 @@ import React from "react";
 import PricesContent from "./style";
 import ListPrice from "../ListPrice";
 import Button from "../Button";
-import Reviews from "../Reviews";
 import ReviewsSlider from "../ReviewsSlider";
 import Lideranca from "../../assets/images/lideranca.png";
 
@@ -56,7 +55,7 @@ const Prices = () => {
   const [showAll, setShowAll] = React.useState(false);
 
   return (
-    <PricesContent>
+    <PricesContent id="works">
       <div className="price">
         <h2 className="title">
           <span className="textHighlight">Nossos</span> Preços

@@ -13,6 +13,11 @@ export const HeaderContainer = styled.header`
     z-index: 1000;
     transition: background-color 0.3s ease-in-out;
 
+    @media (max-width: 768px){
+        img{
+            margin-left: -3rem;
+        }
+    }
 
     .containerHeader{
         min-width: 1400px;
@@ -42,6 +47,15 @@ export const HeaderContainer = styled.header`
                 display: flex;
                 width: 100%;
                 gap: 0 4rem;
+
+                li{
+                    cursor: pointer;
+                }
+
+                li:hover{
+                   color: ${({theme}) => theme.primaryText};
+                   transition: all.4s;
+                }
             }
         }
 
@@ -63,6 +77,7 @@ export const HeaderContainer = styled.header`
     }
 
     @media (max-width: 768px){
+        justify-content: space-around;
         .menu{
             display: none;
         }
@@ -71,6 +86,13 @@ export const HeaderContainer = styled.header`
     @media (min-width: 769px){
         .toggleMenu{
             display: none;
+        }
+    }
+
+    @media (max-width: 1024px){
+        .containerHeader{
+            min-width: 0;
+            max-width: 1400px;
         }
     }
 `;

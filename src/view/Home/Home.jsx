@@ -16,9 +16,9 @@ const Home = () => {
         <Works />
         <Prices/>
         <Contact />
-        {/* <About /> */}
       </ContainerHome>
     </>
+        
   );
 };
 

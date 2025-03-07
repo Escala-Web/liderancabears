@@ -15,6 +15,14 @@ const SliderReviewContainer = styled.div`
         color: ${({theme}) => theme.primaryText};
         font-size: 2rem;
     }
+
+    @media (max-width: 425px){
+        max-width: 320px;
+
+        .slick-prev:before, .slick-next:before{
+            display: none;
+        }
+    }
 `;
 
 export default SliderReviewContainer;

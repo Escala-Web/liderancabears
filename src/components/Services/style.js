@@ -6,6 +6,10 @@ const ServicesContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
   
   .contentServices{
     margin-top: 5rem;
@@ -17,6 +21,10 @@ const ServicesContainer = styled.section`
     gap: 1rem;
     padding: 0 16rem;
     box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+      grid-column: 1;
+  }
   }
 
   .aboutService, .local {
@@ -36,6 +44,11 @@ const ServicesContainer = styled.section`
   .local{
     padding-right: 18rem;
     position: relative;
+
+
+    @media (max-width: 1024px) {
+      padding-right: 0;
+  }
 
     .descriptionLocal{
       color: ${({ theme }) => theme.paragraphColor};
@@ -95,10 +108,17 @@ const ServicesContainer = styled.section`
         height: 100%;
         left: 0;
 
+        @media (max-width: 1024px) {
+          position: relative;
+              height: 500px;
+            }
+
         iframe{
             position: absolute;
             width: 100%;
             height: 100%;
+
+           
         }
     }
 
@@ -178,13 +198,14 @@ const ServicesContainer = styled.section`
 
     .aboutService, .local{
       padding: 5rem 10rem;
+
+
     }
 
     .contentServices{
       margin-top: 5rem;
       width: 100%;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
       display: grid;
       justify-content: center;
       align-items: center;
@@ -193,11 +214,72 @@ const ServicesContainer = styled.section`
       gap: 1rem;
 
       .cardService{
-        width: 80%;
-        height: 80%;
+        width: 85%;
+        height: 85%;
         h3{
           text-align: center;
         }
+      }
+    }
+  }
+
+  @media (max-width: 1024px){
+    .aboutService, .local{
+      padding: 5rem 12rem;
+    }
+
+    .contentServices{
+      padding: 0 5rem;
+    }
+
+    .local{
+      padding: 0;
+
+      .location{
+        margin-left: 15rem;
+      }
+
+    }
+  }
+
+  @media (max-width: 768px){
+    .contentServices{
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      .cardService{
+        width: 50%;
+      }
+    }
+
+    .aboutService{
+      padding: 5rem 6rem;
+    }
+
+  }
+
+  @media (max-width: 425px){
+
+    .contentServices{
+      .cardService{
+        width: 70%;
+      }
+    }
+
+    .aboutService{
+      padding: 5rem 2rem;
+      .title{
+        font-size: 2.2rem;
+      }
+    }
+
+    .local{
+      .titleHead{
+        font-size: 1.2rem;
+      }
+
+      .location{
+        margin-left: 5rem;
       }
     }
   }

@@ -14,10 +14,11 @@ const Contact = () => {
       const response = await email(data);
       console.log("Resposta do servidor:", response);
 
-      if (response.success) {
-        toast.success("Foi")
+      if (response.status) {
+        toast.success(response.message)
+        e.target.reset();
       } else {
-        toast.error("Não foi");
+        toast.error(response.message);
       }
     } catch (error) {
       console.error("Erro ao enviar e-mail:", error);
@@ -28,7 +29,7 @@ const Contact = () => {
   }
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
 
       <div className="form">
         <h2 className="title">
@@ -46,7 +47,7 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <input type="text" placeholder="CONTATO" name="phone" />
+            <input type="text" placeholder="CONTATO" name="contact" />
           </div>
 
           <div className="form-group">
@@ -58,7 +59,7 @@ const Contact = () => {
             ></textarea>
           </div>
 
-          <Button text={"Enviar Menagem"} isActive={false} />
+          <Button text={"Enviar Mensagem"} isActive={false} />
         </form>
       </div>
 

@@ -10,6 +10,7 @@ const ContainerBanner = styled.div`
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url(${banner});
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: hidden;
 
 	.since{
 		position: relative;
@@ -39,6 +40,18 @@ const ContainerBanner = styled.div`
 		left: 100%;
 		display: block;
 		margin: 10px;
+	}
+
+	@media (max-width: 1024px){
+		.title{
+			font-size: 3rem;
+		}
+  	}
+
+	@media (max-width: 768px) {
+		.title{
+			font-size: 2.2rem;
+		}	
 	}
 `;
 

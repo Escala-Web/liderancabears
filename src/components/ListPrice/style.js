@@ -11,6 +11,10 @@ const ListPriceContainer = styled.div`
     border-bottom: 2px solid ${({theme}) => theme.colorGray};
     font-weight: bold;
 
+    @media (max-width: 425px){
+        font-size: 1.1rem;
+    }
+
     .serviceList{
         color: ${({theme}) => theme.secondaryText};
     }
