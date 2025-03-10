@@ -6,6 +6,7 @@ import ContainerHome from "./style";
 import Works from "../../components/Works";
 import Prices from "../../components/Prices";
 import Contact from "../../components/Contact";
+import Team from "../../components/Team";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Services />
         <Works />
         <Prices/>
+        <Team />
         <Contact />
       </ContainerHome>
     </>

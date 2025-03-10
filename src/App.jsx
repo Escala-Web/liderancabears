@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import * as CookieConsent from "vanilla-cookieconsent";
+import { atualizarPolitica, showPosition } from "./api/ip";
 
 function App() {
   const [themeSelect, setThemeSelect] = useState("dark");
@@ -18,17 +19,30 @@ function App() {
     setThemeSelect((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
 
+  const updatePolicy = async () => {
+    try {
+      const response = await atualizarPolitica();
+      if (response?.success) {
+        console.log("✅ Politica atualizada com sucesso");
+      } else {
+        console.log(
+          "❌ Erro: Não foi possível atualizar politica de privacidade"
+        );
+      }
+    } catch (error) {
+      console.log(
+        "❌ Erro: Não foi possível atualizar politica de privacidade"+error
+      );
+    }
+  };
+
   React.useEffect(() => {
-    console.log("Iniciando Cookie Consent...");
-  
     const timer = setTimeout(() => {
       if (typeof CookieConsent === "undefined") {
         console.error("❌ Erro: CookieConsent não está carregado!");
         return;
       }
-  
-      console.log("✅ CookieConsent carregado, executando...");
-  
+
       CookieConsent.run({
         categories: {
           necessary: {
@@ -37,14 +51,14 @@ function App() {
           },
           analytics: {},
         },
-  
+
         guiOptions: {
           consentModal: {
             layout: "box",
             position: "bottom left",
           },
         },
-  
+
         language: {
           default: "pt",
           translations: {
@@ -86,18 +100,19 @@ function App() {
             },
           },
         },
-  
+
         onConsent: (categories) => {
           console.log("✅ Cookies aceitos:", categories);
           localStorage.setItem("cookie_consent", JSON.stringify(categories));
+          updatePolicy();
         },
-  
+
         onChange: (categories) => {
           console.log("⚡ Preferências de cookies alteradas:", categories);
         },
       });
     }, 3000);
-  
+
     return () => clearTimeout(timer);
   }, []);
 

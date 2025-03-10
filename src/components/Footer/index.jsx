@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-content">
-        <p> Liderança Bears. Todos os direitos reservados</p>
+        <p> Liderança Barbers Shop. Todos os direitos reservados</p>
         <p>
           <Link to={"/politica-de-privacidade"} title="Política de Privacidade">Politica de privacidade</Link>
         </p>

@@ -70,10 +70,11 @@ const Header = ({ anchor = "right" }) => {
           { text: "Home", link: "/" },
           { text: "Sobre", link: "#about" },
           { text: "Serviços", link: "#works" },
+          {text: "Time", link: "#workers"},
           { text: "Contato", link: "#contact" },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton component="a" href={item.link}>
+            <ListItemButton onClick={()=> navigateTo(item.link)}>
               <ListItemText primary={item.text} style={{textTransform: 'uppercase', fontWeight: "bold", color: "white"}}/>
             </ListItemButton>
           </ListItem>
@@ -132,6 +133,7 @@ const Header = ({ anchor = "right" }) => {
               <li onClick={() => navigateHome()}>Home</li>
               <li onClick={()=> navigateTo("#about")}>Sobre</li>
               <li onClick={()=> navigateTo("#works")}>Serviços</li>
+              <li onClick={()=> navigateTo("#workers")}>Time</li>
               <li onClick={()=> navigateTo("#contact")}>Contato</li>
             </ul>
             <button className="agendar" onClick={()=> redirectWhatsapp()}>Agendamento</button>
