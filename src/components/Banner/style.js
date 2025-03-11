@@ -53,6 +53,12 @@ const ContainerBanner = styled.div`
 			font-size: 2.2rem;
 		}	
 	}
+
+	@media (max-width: 420px){
+		.title{
+			padding: 1rem;
+		}
+	}
 `;
 
 
