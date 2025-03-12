@@ -7,10 +7,23 @@ const ContainerBanner = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url(${banner});
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow-x: hidden;
+
+	.background-blur {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0)), url(${banner});
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: blur(8px);
+		overflow-x: hidden;	
+	}
 
 	.since{
 		position: relative;
@@ -18,7 +31,27 @@ const ContainerBanner = styled.div`
 		font-size: 1.2rem;
 	}
 
-	.since::after{
+	.title{
+		position: relative;
+		margin-top: 6rem;
+		margin-bottom: 0;
+	}
+
+	.img{
+		margin: 1rem 0;
+		position: relative;
+
+		img{
+			box-shadow: 0px 0px 12px 5px #be96616b;
+			border-radius: 12px;
+		}
+	}
+
+	.buttonAction{
+		position: relative;
+	}
+
+	/* .since::after{
 		content: "";
 		width: 100%;
 		background-color: white;
@@ -40,13 +73,30 @@ const ContainerBanner = styled.div`
 		left: 100%;
 		display: block;
 		margin: 10px;
-	}
+	} */
+
+	@media (min-width: 1024px) {
+		.img{
+			display: flex;
+			justify-content: center;
+			width: 50%;
+			display: none;
+
+			img{
+				width: 150%;
+			}
+		}
+
+		.since{
+			margin: 1rem 0;
+		}
+	}	
 
 	@media (max-width: 1024px){
 		.title{
 			font-size: 3rem;
 		}
-  	}
+	}
 
 	@media (max-width: 768px) {
 		.title{
@@ -57,6 +107,57 @@ const ContainerBanner = styled.div`
 	@media (max-width: 420px){
 		.title{
 			padding: 1rem;
+			margin-top: 4rem;
+			font-size: 1.5rem !important;
+		}
+
+		.contentSize{
+			display: flex;
+			justify-content: center;
+			padding: 0 1rem;
+			
+			.since{
+				text-align: center;
+				margin: 0;
+				font-size: 1.1rem;
+			}	
+		}
+		.img{
+			display: flex;
+			justify-content: center;
+
+			img{
+				width: 80% !important;
+			}
+		}
+
+		.buttonAction{
+			margin-bottom: 2rem;
+		}
+	}
+
+	@media (max-width: 768px){
+		.contentSize{
+			display: flex;
+			justify-content: center;
+			padding: 0 1rem;
+			
+			.since{
+				text-align: center;
+				margin-bottom: 2rem;
+			}	
+		}
+		.img{
+			display: flex;
+			justify-content: center;
+
+			img{
+				width: 100%;
+			}
+		}
+
+		.buttonAction{
+			margin-bottom: 2rem;
 		}
 	}
 `;

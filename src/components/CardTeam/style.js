@@ -15,7 +15,7 @@ position: relative;
     
     .worker{
         position: absolute;
-        z-index: 1000;
+        z-index: 1;
         bottom: 0;
         background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0));
         width: 100%;

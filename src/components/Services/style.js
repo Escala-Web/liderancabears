@@ -37,8 +37,8 @@ const ServicesContainer = styled.section`
   }
 
   .aboutService{
-    background-color: ${({ theme }) => theme.backgroundContrast};
-    padding-left: 18rem;
+    /* background-color: ${({ theme }) => theme.backgroundContrast}; */
+    padding-left: 17.1rem;
   }
 
   .local{

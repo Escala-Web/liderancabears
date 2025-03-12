@@ -1,6 +1,7 @@
 import ContainerBanner from "./style";
 import Button from "../Button";
 import { Container } from "../../styles/GlobalStyle";
+import with_banner from '../../assets/images/with_banner.png';
 
 const Banner = () => {
 
@@ -11,11 +12,16 @@ const Banner = () => {
 
   return (
     <ContainerBanner>
+      <div className="background-blur"></div>
       <Container>
         <h1 className="title">Sempre trabalhando <span className="textHighlight">no seu estilo</span></h1>
 
-        <div>
-          <p className="since">Desde 2024</p>
+        <div className="contentSize">
+          <p className="since">Atendimento exclusivo e uma experiência única para homens que valorizam o visual</p>
+        </div>
+
+        <div className="img">
+          <img src={with_banner} alt="" />
         </div>
 
         <Button text={"Faça seu Agendamento"} onClick={()=> redirectWhatsapp()}></Button>

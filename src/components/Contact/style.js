@@ -5,6 +5,7 @@ const ContactContainer = styled.section`
  display: grid;
  grid-template-columns: 1fr 1fr;
  width: 100%;
+  background-color: ${({ theme }) => theme.backgroundContrast};
 
  @media (max-width: 1024px){
     grid-template-columns: 1fr;
