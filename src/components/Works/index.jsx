@@ -17,9 +17,15 @@ import work12 from "../../assets/images/trabalhos/12.png";
 import work13 from "../../assets/images/trabalhos/13.png";
 import work14 from "../../assets/images/trabalhos/14.png";
 import work15 from "../../assets/images/trabalhos/15.png";
+import work16 from '../../assets/images/trabalhos/16.png';
+import work17 from '../../assets/images/trabalhos/17.png';
+import work18 from '../../assets/images/trabalhos/18.png';
 
 const Works = () => {
   const clients = [
+    work16,
+    work17,
+    work18,
     work1,
     work2,
     work3,
